@@ -1,0 +1,9 @@
+/* TODO: It's awful */
+.task-entry {
+    padding: 30px 20px;
+    background-color: #333;
+    color: inherit;
+    margin: 30px;
+    display: inline-block;
+    width: 80%;
+}
