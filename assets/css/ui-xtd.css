@@ -6,3 +6,12 @@
 .btn-with-borders:hover {
     border-color: #0a0;
 }
+
+pre {
+    background-color: inherit;
+    border: none;
+}
+
+#legal {
+    margin-left: 30px;
+}
