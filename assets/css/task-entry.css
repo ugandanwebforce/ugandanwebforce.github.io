@@ -7,3 +7,14 @@
     display: inline-block;
     width: 80%;
 }
+
+.task-entry .task-difficulty {
+    font-style: italic;
+    color: inherit;
+}
+
+.task-entry .task-text {
+    background-color: inherit;
+    border: none;
+    color: #090;
+}
