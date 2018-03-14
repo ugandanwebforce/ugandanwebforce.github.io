@@ -1,0 +1,8 @@
+/* TODO: Again, looks awful (not as awful as usual, but still awful) */
+.btn-with-borders {
+    color: #0b0;
+    border: 1px solid #070;
+}
+.btn-with-borders:hover {
+    border-color: #0a0;
+}
