@@ -3,9 +3,11 @@
     padding: 30px 20px;
     background-color: #333;
     color: inherit;
-    margin: 30px;
-    display: inline-block;
-    width: 80%;
+    /*margin: 30px;*/
+    margin: auto;
+    display: block;
+    margin-bottom: 80px;
+    width: 95%;
 }
 
 .task-entry .task-difficulty {
@@ -16,5 +18,11 @@
 .task-entry .task-text {
     background-color: inherit;
     border: none;
-    color: #090;
+    color: #0b0;
+}
+
+.task-container {
+    display: block;
+    margin: auto;
+    width: 1000px;
 }
