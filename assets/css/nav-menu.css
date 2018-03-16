@@ -1,0 +1,11 @@
+.dropdown-menu>li>.nav-current-page {
+    /* TODO: The design is awful */
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: bold;
+    line-height: 1.428571429;
+    color: #eee;
+    background-color: #555;
+    white-space: nowrap;
+}

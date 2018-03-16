@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/css/hacker.css">
+
+    <!-- Our own CSS -->
+    <link rel="stylesheet" href="/assets/css/nav-menu.css">
+    <link rel="stylesheet" href="/assets/css/task-entry.css">
+    <link rel="stylesheet" href="/assets/css/ui-xtd.css">
+    <title>Tasks - Ugandan Web Force</title>
+</head>
+
+<body>
+<!-- OK, I have no idea what to do so let's copy-paste a bit from ../index.html -->
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+
+                <!-- QUESTION: Why do we need these 3 lines? And where's the
+                     'Toggle navigation' button on the page? -->
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Ugandan Web Force</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                            aria-expanded="false">
+                        Menu <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="/">Main</a></li>
+                        <li><span class="nav-current-page">Tasks</span></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="//github.com/ugandanwebforce" target="_blank">github</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Tasks</h1>
+        <!-- TODO: Write something meaningful here -->
+        <p>Here are some CTF tasks</p>
+        <p>
+            <a class="btn btn-lg btn-primary" href="#tasks-container" role="button">View online</a>
+            <!-- TODO: Add working link, not just this stub -->
+            <a class="btn btn-lg btn-primary" href="#" role="button" disabled>Download</a>
+        </p>
+        <p>
+            <a href="#legal" class="btn btn-with-borders">License</a>
+        </p>
+    </div>
+    <div id="legal">
+        <h2>License</h2>
+        <p>All these tasks are distributed under conditions of WTFPL license version 2</p>
+        <h3>Text of the WTFPL license version 2</h3>
+        <pre>
+            Version 2, December 2004
+
+Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+
+Everyone is permitted to copy and distribute verbatim or modified
+copies of this license document, and changing it is allowed as long
+as the name is changed.
+
+DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+0. You just DO WHAT THE FUCK YOU WANT TO.
+        </pre>
+    </div>
+    <div id="tasks-container">
+        <div class="task-entry">
+            <!-- TODO: Подумать над этим: сайт у нас на английском, но таски на
+                 английском - это слишком даже для нас -->
+            <h2>Задача 1</h2>
+            <h3>Переписка</h3>
+            <p class="task-difficulty">Сложность: 3/10</p>
+            <p class="task-text">Хакеры взломали один мессенджер и теперь могут читать чужую
+            переписку. Только что они перехватили несколько сообщений:</p>
+            <pre class="task-text">
+    amy123: Таким образом, вряд ли кто-то узнает пароль от этого архива
+    ikun41: Слушай, что это за текст такой странный?
+     -- Пересланное сообщение
+     |
+     | amy123: <Вложение: text>
+     |
+     -- Конец сообщения
+    ikun41: Да, и что это вообще такое?
+     -- Пересланное сообщение
+     |
+     | amy123: <Вложение: ЯЧС.zip>
+     |
+     -- Конец сообщения
+    ikun41: Что в нём лежит?
+    amy123: Не скажу
+            </pre>
+            <p class="task-text">Хакеры смогли успешно скачать эти вложения, но они не могут подобрать пароль к архиву.</p>
+            <p class="task-text">Сможете ли вы им помочь?</p>
+            <div class="task-dl-btn-container">
+                <a href="downloads/task1/files.tar.gz" class="btn btn-with-borders" target="_blank">Download task files</a>
+            </div>
+        </div>
+        <div class="task-entry">
+            <h2>Задача 2</h2>
+            <h3>Повреждённые исходники</h3>
+            <p class="task-difficulty">Сложность: 5/10</p>
+            <p class="task-text">
+                Вася очень любит программировать. Некделю назад он написал интересную программу, и захотел похвастаться другу. У друга есть компилятор, но программа почему-то не компилируется.
+                Сегодня Вася сказал, что он до сих пор не смог подобрать такое число, чтобы программе оно понравилось. Тут его друг захотел это сделать первым. Он открыл файл main.cpp и увидел там... В общем, он понял, почему ничего не компилируется: не надо было передавать этот файл через ненадёжное соединение. Но он всё равно думает, что вы сможете ему помочь.
+            </p>
+            <p class="task-text">
+                Помогите Васиному другу подобрать нужное число.
+            </p>
+            <p class="task-text">
+                P.S. Только что позвонил Вася и сказал, что думает, что в этом числе вряд ли больше 8 цифр. Ну что ж, ему, наверное, виднее
+            </p>
+            <div class="task-dl-btn-container">
+                <a href="downloads/task2/files.tar.gz" class="btn btn-with-borders" target="_blank">Download task files</a>
+            </div>
+        </div>
+        <div class="task-entry">
+            <h2>Задача 3</h2>
+            <h3>Мем.jpg</h3>
+            <p class="task-difficulty">Сложность: 2/10</p>
+            <p class="task-text">
+                Формат JPEG печально известен своими возможностями "сохранять качество изображений" при сжатии.
+                Пробовали ли вы сохранить что-то в JPEG с качеством меньше 50? Если да, то вы, наверное знаете,
+                насколько "качественным" получится итоговое изображение. То же самое случилось и здесь. Хотя
+                постойте... Или не то же самое? Почему только в одном месте?
+            </p>
+            <div class="task-dl-btn-container">
+                <a href="downloads/task3/files.tar.gz" class="btn btn-with-borders" target="_blank">Download task files</a>
+            </div>
+        </div>
+        <div class="task-entry">
+            <h2>Задача 4</h2>
+            <h3>Криптосистема</h3>
+            <p class="task-difficulty">Сложность: 5/10</p>
+            <p class="task-text">
+                Известная IT-компания MacroHard®™ выпустила свою уникальную криптосистему, использующую практически
+                непобедимый шифр. Он настолько надёжен, что один из сотрудников этой компании даже вложил в
+                исходники этой программы свой пароль от почты (естественно, зашифрованный данной криптосистемой).
+            </p>
+            <p class="task-text">
+                Хакер Вася хочет взломать почту этого сотрудника. Для этого он хочет найти и расшифровать его
+                пароль. Вася попытался скачать криптосистему с сайта. Однако сейчас MacroHard®™ испытывает
+                трудности со своими серверами, поэтому для скачивания была доступна только демоверсия, способная
+                только расшифровывать информацию.
+            </p>
+            <p class="task-text">
+                Как известно, сотрудники MacroHard®™ очень внимательны, и не допустят попадания исходного кода в
+                чужие руки. Кроме того, в целях безопасности скачанная демоверсия криптосистемы оказалась как-то
+                очень странно запакована, и Вася так и не смог её запустить.
+            </p>
+            <p class="task-text">
+                Вася решил обратиться за помощью к вам со словами: "Ты ж программист, взломай мне почту".
+                Помогите ему в его нелёгком деле.
+            </p>
+            <div class="task-dl-btn-container">
+                <a href="downloads/task4/files.tar.gz" class="btn btn-with-borders" target="_blank">Download task files</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>
