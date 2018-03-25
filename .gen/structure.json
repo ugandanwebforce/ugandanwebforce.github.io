@@ -1,0 +1,29 @@
+{
+  "templates_dir": "templates/",
+  "modules_dir": "modules/",
+  "index_file": "index.html",
+  "pages": [
+    {
+      "page_id": "main",
+      "menu_title": "Main",
+      "path": "/",
+      "module_options": {
+        "menu_collapse": false
+      },
+      "children": [
+        {
+          "page_id": "tasks",
+          "menu_title": "Tasks",
+          "path": "/tasks",
+          "children": []
+        },
+        {
+          "page_id": "writeups",
+          "menu_title": "Writeups",
+          "path": "/writeups",
+          "children": []
+        }
+      ]
+    }
+  ]
+}
