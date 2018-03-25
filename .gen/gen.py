@@ -8,7 +8,7 @@
 import json
 import re
 from sys import argv
-
+from gen_modules import *
 
 # CONFIGURATION
 structure_filename = 'structure.json'
@@ -38,6 +38,7 @@ def generate_page(page_structure, pages_list):
     template_content = get_template(page_structure['path'])
     module_options = page_structure['module_options'] if 'module_options' in page_structure else {}
     module_options['pages_list'] = pages_list
+    module_options['current_page'] = page_structure['page_id']
     parsed_content = parse_template(template_content, module_options)
     with open('{prefix}/{page_path}/{index_file}'.format(prefix = output_path, page_path = page_structure['path'], index_file = index_file), 'w') as output_file:
         output_file.write(parsed_content)
@@ -62,7 +63,8 @@ def parse_template(template_content, module_options):
     return ret
 
 def run_module(module_name, module_options):
-    return 'Running module {} with options {}'.format(module_name, repr(module_options))
+    return modules[module_name](module_options)
+    #return 'Running module {} with options {}'.format(module_name, repr(module_options))
 
 def list_pages(toplevel_structure):
     assert(type(toplevel_structure) == dict)
@@ -73,7 +75,7 @@ def list_pages(toplevel_structure):
 
 def list_subpages(page_structure):
     assert(type(page_structure) == dict)
-    ls = [(page_structure['page_id'], page_structure['menu_title'])]
+    ls = [(page_structure['page_id'], page_structure['menu_title'],page_structure['path'])]
     for i in page_structure['children']:
         ls += list_subpages(i)
     return ls
