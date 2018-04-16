@@ -3,14 +3,14 @@
 
 def run(options):
     ret = '''
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                Menu <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-                {}
-            </ul>
-        </li>'''
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+        Menu <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu" role="menu">
+        {}
+    </ul>
+</li>'''
     fmt = ''
     for page in options['pages_list']:
         if page[0] == options['current_page']:

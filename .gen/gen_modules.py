@@ -2,9 +2,15 @@
 # -*- coding: utf-8 -*-
 
 import mod_dropdown_menu as dropdown
+import mod_navbar as navbar
+import mod_head as head
+import mod_scripts as scripts
 
 raw_modules = {
     'dropdown_menu': dropdown,
+    'navbar': navbar,
+    'head': head,
+    'scripts': scripts,
 }
 #((name, pymod.run) for (name, pymod) in raw_modules)
 

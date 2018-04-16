@@ -8,7 +8,8 @@
 import json
 import re
 from sys import argv
-from gen_modules import *
+#from gen_modules import *
+import gen_modules
 
 # CONFIGURATION
 structure_filename = 'structure.json'
@@ -52,18 +53,30 @@ def get_template(page_path):
 
 def parse_template(template_content, module_options):
     ret = ''
-    used_modules = re.findall(r'%%GENPY_MODULE:[a-zA-Z0-9_-]+%%', template_content)
-    text_content = re.split(r'%%GENPY_MODULE:[a-zA-Z0-9_-]+%%', template_content)
+    used_modules = re.findall(r'%%GENPY_MODULE:[a-zA-Z0-9+/_,= -]+%%', template_content)
+    text_content = re.split(r'%%GENPY_MODULE:[a-zA-Z0-9+/_,= -]+%%', template_content)
     ret += text_content[0]
     text_content = text_content[1:]
     for (module_match, text) in zip(used_modules, text_content):
         module_name = module_match[15:-2]
-        ret += run_module(module_name, module_options)
+        module_extra_options_raw = re.findall(r',\w*=[a-zA-Z0-9+/_= -]+', module_name)
+        module_extra_options = dict([tuple(i[1:].split('=', 1)) for i in module_extra_options_raw])
+        del module_extra_options_raw
+        #print(module_name, repr(module_extra_options)) # Debug
+        module_basename = re.match(r'[^,=]*', module_name).group(0)
+
+        for k, v in module_extra_options.items():
+            #print("D: mo[{}] = {}".format(k, v))
+            module_options[k] = v
+
+        #print("A", module_basename, repr(module_options)) # Debug
+
+        ret += run_module(module_basename, module_options)
         ret += text
     return ret
 
 def run_module(module_name, module_options):
-    return modules[module_name](module_options)
+    return gen_modules.modules[module_name](module_options)
     #return 'Running module {} with options {}'.format(module_name, repr(module_options))
 
 def list_pages(toplevel_structure):
@@ -90,21 +103,25 @@ usage_info_string = usage_info_string[1:-1]
 
 
 # ENTRY POINT
-if len(argv) >= 2 and argv[1] == '--help':
-    print_usage_info()
-    exit(0)
+def main():
+    if len(argv) >= 2 and argv[1] == '--help':
+        print_usage_info()
+        exit(0)
 
-json_text = ''
-with open(structure_filename, 'r') as structure_file:
-    json_text = structure_file.read()
+    json_text = ''
+    with open(structure_filename, 'r') as structure_file:
+        json_text = structure_file.read()
 
-structure = {}
-try:
-    structure = json.loads(json_text)
-except json.decoder.JSONDecodeError as exc:
-    print('Error: structure file is in invalid format')
-    print('JSON decoding failed. Error info:')
-    print(exc)
-    exit(1)
+    structure = {}
+    try:
+        structure = json.loads(json_text)
+    except json.decoder.JSONDecodeError as exc:
+        print('Error: structure file is in invalid format')
+        print('JSON decoding failed. Error info:')
+        print(exc)
+        exit(1)
 
-generate_toplevel(structure)
+    generate_toplevel(structure)
+
+if __name__ == '__main__':
+    main()
